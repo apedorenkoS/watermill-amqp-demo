@@ -21,7 +21,7 @@ type transportImpl struct {
 	subReaderPoolSize int
 }
 
-func NewTransport(conf config.Config, queueNamePrefix string) (Transport, error) {
+func NewTransport(conf config.Config) (Transport, error) {
 	subConfig := amqp.NewDurablePubSubConfig(
 		conf.RabbitURI,
 		amqp.GenerateQueueNameTopicNameWithSuffix(uuid.NewString()))

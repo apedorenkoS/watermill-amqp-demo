@@ -15,7 +15,7 @@ import (
 func main() {
 	conf := config.LoadConfig()
 
-	transport, err := event.NewTransport(conf, "all.instances.receive.events.queue.")
+	transport, err := event.NewTransport(conf)
 	if err != nil {
 		log.Panic().Msgf("Failed to create transport: %v", err)
 	}
